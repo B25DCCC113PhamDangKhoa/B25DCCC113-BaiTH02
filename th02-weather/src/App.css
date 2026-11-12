@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  padding: 24px;
+  transition: background 0.4s ease;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  color: #1e293b;
+}
+
+.app-wrapper.rainy {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+}
+
+.app-wrapper.stormy {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  color: #f8fafc;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.unit-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.unit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* YC6: Giao diện Responsive - Nhỏ hơn 768px xếp dọc 1 cột */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* YC6: Từ 768px trở lên chia 2 cột */
+@media (min-width: 768px) {
+  .main-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+}
+
+.sidebar, .content-card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.city-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.city-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.city-item:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* YC1: Thành phố đang chọn được làm nổi bật */
+.city-item.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.status-box {
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.retry-btn {
+  margin-top: 14px;
+  padding: 10px 20px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.temp-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weather-icon-big {
+  font-size: 56px;
+}
+
+.temp-value {
+  font-size: 44px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.forecast-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.forecast-day {
+  font-weight: 700;
+  color: #334155;
+}
+
+.forecast-date {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.forecast-icon {
+  font-size: 30px;
+  margin: 4px 0;
+}
+
+.forecast-temps {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.temp-max {
+  color: #dc2626;
+  margin-right: 6px;
+}
+
+.temp-min {
+  color: #2563eb;
+}
